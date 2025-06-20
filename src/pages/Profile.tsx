@@ -1,12 +1,19 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
 const Profile: React.FC = () => {
   const [activeTab, setActiveTab] = useState("ratings");
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate("/");
+  };
 
   // Mock data
   const userStats = {
@@ -88,8 +95,23 @@ const Profile: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white pb-20">
-      {/* Header */}
+    <div className="min-h-screen bg-gray-950 text-white">
+      {/* Header with back button */}
+      <div className="bg-gray-900 px-4 py-3 flex items-center gap-4">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={handleBackClick}
+          className="text-white hover:bg-gray-800"
+        >
+          <Icon name="ArrowLeft" size={20} />
+        </Button>
+        <div>
+          <h1 className="text-white text-xl font-bold">Профиль</h1>
+          <p className="text-gray-400 text-sm">Ваша активность</p>
+        </div>
+      </div>
+      {/* Profile Content */}
       <div className="bg-gradient-to-b from-purple-900/20 to-transparent p-6">
         <div className="flex items-center space-x-4 mb-6">
           <Avatar className="w-20 h-20 border-2 border-purple-400">
