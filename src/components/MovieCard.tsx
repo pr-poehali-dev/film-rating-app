@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 interface MovieCardProps {
@@ -21,6 +22,13 @@ const MovieCard: React.FC<MovieCardProps> = ({
   isNew = false,
 }) => {
   const [showActions, setShowActions] = useState(false);
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    // Генерируем простой ID на основе названия фильма
+    const movieId = title.toLowerCase().replace(/\s+/g, "-");
+    navigate(`/movie/${movieId}`);
+  };
 
   return (
     <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 relative">
@@ -73,7 +81,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
         </div>
       )}
 
-      <div className="p-3">
+      <div className="p-3 cursor-pointer" onClick={handleCardClick}>
         <h3 className="text-white font-medium text-sm mb-1 truncate">
           {title}
         </h3>
