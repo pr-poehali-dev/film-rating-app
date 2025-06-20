@@ -301,6 +301,182 @@ const MovieDetails: React.FC = () => {
             </div>
           </CardContent>
         </Card>
+
+        {/* Licensing & Rights */}
+        <Card className="bg-gray-900 border-gray-800 mb-8">
+          <CardHeader>
+            <CardTitle className="text-white flex items-center gap-2">
+              <Icon name="Shield" size={20} />
+              Лицензии и права
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              {/* Distribution Rights */}
+              <div>
+                <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                  <Icon name="Globe" size={16} />
+                  Права на распространение
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                  <div className="bg-gray-800 p-3 rounded-lg">
+                    <strong className="text-blue-400">Theatrical:</strong>
+                    <p className="text-gray-300">
+                      Paramount Pictures Worldwide
+                    </p>
+                  </div>
+                  <div className="bg-gray-800 p-3 rounded-lg">
+                    <strong className="text-blue-400">Streaming:</strong>
+                    <p className="text-gray-300">
+                      Netflix, Amazon Prime (лицензия до 2025)
+                    </p>
+                  </div>
+                  <div className="bg-gray-800 p-3 rounded-lg">
+                    <strong className="text-blue-400">DVD/Blu-ray:</strong>
+                    <p className="text-gray-300">
+                      Warner Bros. Home Entertainment
+                    </p>
+                  </div>
+                  <div className="bg-gray-800 p-3 rounded-lg">
+                    <strong className="text-blue-400">TV Rights:</strong>
+                    <p className="text-gray-300">HBO, Showtime (США)</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Regional Availability */}
+              <div>
+                <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                  <Icon name="Map" size={16} />
+                  Региональная доступность
+                </h4>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                  <div className="bg-green-900/30 border border-green-700 p-2 rounded text-center">
+                    <p className="text-green-400 font-medium">США</p>
+                    <p className="text-gray-300 text-xs">Полные права</p>
+                  </div>
+                  <div className="bg-green-900/30 border border-green-700 p-2 rounded text-center">
+                    <p className="text-green-400 font-medium">Европа</p>
+                    <p className="text-gray-300 text-xs">Полные права</p>
+                  </div>
+                  <div className="bg-yellow-900/30 border border-yellow-700 p-2 rounded text-center">
+                    <p className="text-yellow-400 font-medium">Азия</p>
+                    <p className="text-gray-300 text-xs">Ограниченно</p>
+                  </div>
+                  <div className="bg-red-900/30 border border-red-700 p-2 rounded text-center">
+                    <p className="text-red-400 font-medium">Китай</p>
+                    <p className="text-gray-300 text-xs">Запрещён</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Talent Rights */}
+              <div>
+                <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                  <Icon name="Users" size={16} />
+                  Права участников
+                </h4>
+                <div className="space-y-3">
+                  {/* Actor Rights */}
+                  <div className="bg-gray-800 p-4 rounded-lg">
+                    <h5 className="text-blue-400 font-medium mb-2">Актёры</h5>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                      <div>
+                        <strong>Мэттью МакКонахи:</strong>
+                        <p className="text-gray-400">
+                          © CAA Talent Agency | Гонорар + % с проката
+                        </p>
+                      </div>
+                      <div>
+                        <strong>Энн Хэтэуэй:</strong>
+                        <p className="text-gray-400">
+                          © WME Entertainment | Фиксированный гонорар
+                        </p>
+                      </div>
+                      <div>
+                        <strong>Джессика Честейн:</strong>
+                        <p className="text-gray-400">
+                          © United Talent Agency | Гонорар + бонус
+                        </p>
+                      </div>
+                      <div>
+                        <strong>Майкл Кейн:</strong>
+                        <p className="text-gray-400">
+                          © ICM Partners | Фиксированный гонорар
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Director & Producer Rights */}
+                  <div className="bg-gray-800 p-4 rounded-lg">
+                    <h5 className="text-blue-400 font-medium mb-2">
+                      Режиссёр и продюсеры
+                    </h5>
+                    <div className="space-y-2 text-sm">
+                      <div>
+                        <strong>Кристофер Нолан (Режиссёр):</strong>
+                        <p className="text-gray-400">
+                          © Syncopy Inc. | Авторские права + % с проката +
+                          контроль монтажа
+                        </p>
+                      </div>
+                      <div>
+                        <strong>Эмма Томас (Продюсер):</strong>
+                        <p className="text-gray-400">
+                          © Syncopy Inc. | Продюсерский гонорар + % с прибыли
+                        </p>
+                      </div>
+                      <div>
+                        <strong>Lynda Obst (Продюсер):</strong>
+                        <p className="text-gray-400">
+                          © Lynda Obst Productions | Продюсерский гонорар
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Copyright Info */}
+              <div>
+                <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                  <Icon name="Copyright" size={16} />
+                  Авторские права
+                </h4>
+                <div className="bg-gray-800 p-4 rounded-lg text-sm">
+                  <div className="space-y-2">
+                    <p>
+                      <strong className="text-blue-400">
+                        © 2014 Paramount Pictures Corporation.
+                      </strong>{" "}
+                      Все права защищены.
+                    </p>
+                    <p>
+                      <strong>Студия:</strong> Legendary Entertainment, Syncopy
+                    </p>
+                    <p>
+                      <strong>Дистрибьютор:</strong> Paramount Pictures, Warner
+                      Bros. Pictures
+                    </p>
+                    <p>
+                      <strong>Музыка:</strong> © Hans Zimmer, Remote Control
+                      Productions
+                    </p>
+                    <p>
+                      <strong>Сценарий:</strong> © Jonathan Nolan, Christopher
+                      Nolan
+                    </p>
+                    <p className="text-gray-500 text-xs mt-3">
+                      Все торговые марки, логотипы и изображения являются
+                      собственностью соответствующих правообладателей.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
