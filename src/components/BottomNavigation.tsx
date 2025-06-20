@@ -10,7 +10,8 @@ interface NavItem {
 const BottomNavigation: React.FC = () => {
   const navItems: NavItem[] = [
     { name: "Главная", icon: "Home", active: true },
-    { name: "Рейтинги", icon: "TrendingUp", active: false },
+    { name: "Плейлисты", icon: "List", active: false },
+    { name: "Социальное", icon: "Users", active: false },
     { name: "Поиск", icon: "Search", active: false },
     { name: "Профиль", icon: "User", active: false },
   ];

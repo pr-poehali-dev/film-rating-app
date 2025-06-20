@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "@/components/Header";
 import MovieSection from "@/components/MovieSection";
+import SocialSection from "@/components/SocialSection";
+import PlaylistSection from "@/components/PlaylistSection";
 import BottomNavigation from "@/components/BottomNavigation";
 
 const Index: React.FC = () => {
@@ -105,6 +107,9 @@ const Index: React.FC = () => {
         />
         <MovieSection title="Популярное сейчас" movies={popularMovies} />
         <MovieSection title="Новинки" movies={newReleases} />
+
+        <SocialSection />
+        <PlaylistSection />
       </div>
 
       <BottomNavigation />
