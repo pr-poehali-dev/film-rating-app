@@ -17,6 +17,7 @@ const BottomNavigation: React.FC = () => {
     { name: "Плейлисты", icon: "List", path: "/playlists" },
     { name: "Социальное", icon: "Users", path: "/social" },
     { name: "Поиск", icon: "Search", path: "/search" },
+    { name: "Рейтинги", icon: "Trophy", path: "/ratings" },
     { name: "Профиль", icon: "User", path: "/profile" },
   ];
 
