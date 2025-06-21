@@ -14,10 +14,10 @@ const BottomNavigation: React.FC = () => {
 
   const navItems: NavItem[] = [
     { name: "Главная", icon: "Home", path: "/" },
-    { name: "Плейлисты", icon: "List", path: "/playlists" },
-    { name: "Социальное", icon: "Users", path: "/social" },
-    { name: "Поиск", icon: "Search", path: "/search" },
+    { name: "Фильмы", icon: "Film", path: "/movies" },
     { name: "Рейтинги", icon: "Trophy", path: "/ratings" },
+    { name: "Поиск", icon: "Search", path: "/search" },
+    { name: "Лицензии", icon: "Shield", path: "/licenses" },
     { name: "Профиль", icon: "User", path: "/profile" },
   ];
 
