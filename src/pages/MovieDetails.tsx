@@ -19,6 +19,17 @@ interface CrewMember {
   photo: string;
 }
 
+interface Comment {
+  id: number;
+  user: {
+    name: string;
+    avatar: string;
+  };
+  date: string;
+  rating: number;
+  text: string;
+}
+
 const MovieDetails: React.FC = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -114,6 +125,54 @@ const MovieDetails: React.FC = () => {
     alert("Спасибо за ваш отзыв!");
     setReview("");
   };
+
+  // Моковые комментарии
+  const comments: Comment[] = [
+    {
+      id: 1,
+      user: {
+        name: "Алексей Петров",
+        avatar:
+          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face",
+      },
+      date: "15 декабря 2024",
+      rating: 10,
+      text: "Невероятный фильм! Нолан снова поразил своим видением. Каждая сцена продумана до мелочей, а игра актёров просто великолепна. Особенно впечатлили сцены в космосе - захватывает дух!",
+    },
+    {
+      id: 2,
+      user: {
+        name: "Мария Иванова",
+        avatar:
+          "https://images.unsplash.com/photo-1494790108755-2616b332c88c?w=50&h=50&fit=crop&crop=face",
+      },
+      date: "12 декабря 2024",
+      rating: 9,
+      text: "Фильм заставляет задуматься о времени, семье и жертвах. Эмоциональная составляющая на высоте. Плакала в конце. Музыка Циммера - отдельное произведение искусства.",
+    },
+    {
+      id: 3,
+      user: {
+        name: "Дмитрий Козлов",
+        avatar:
+          "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face",
+      },
+      date: "10 декабря 2024",
+      rating: 8,
+      text: "Визуально потрясающий фильм с глубоким сюжетом. Хотя местами сложновато для понимания, но это только добавляет интереса. МакКонахи в своей лучшей роли.",
+    },
+    {
+      id: 4,
+      user: {
+        name: "Елена Смирнова",
+        avatar:
+          "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face",
+      },
+      date: "8 декабря 2024",
+      rating: 9,
+      text: "Один из лучших научно-фантастических фильмов! Сочетание научной точности и эмоциональной глубины просто невероятное. Обязательно к просмотру в кинотеатре.",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
@@ -474,6 +533,57 @@ const MovieDetails: React.FC = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Comments Section */}
+        <Card className="bg-gray-900 border-gray-800 mb-8">
+          <CardHeader>
+            <CardTitle className="text-white flex items-center gap-2">
+              <Icon name="MessageCircle" size={20} />
+              Комментарии ({comments.length})
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              {comments.map((comment) => (
+                <div
+                  key={comment.id}
+                  className="border-b border-gray-800 pb-6 last:border-b-0"
+                >
+                  <div className="flex items-start gap-4">
+                    <img
+                      src={comment.user.avatar}
+                      alt={comment.user.name}
+                      className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+                    />
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <h4 className="font-semibold text-white">
+                          {comment.user.name}
+                        </h4>
+                        <div className="flex items-center gap-1">
+                          <Icon
+                            name="Star"
+                            size={16}
+                            className="text-yellow-400 fill-current"
+                          />
+                          <span className="text-yellow-400 font-medium">
+                            {comment.rating}
+                          </span>
+                        </div>
+                        <span className="text-gray-500 text-sm">
+                          {comment.date}
+                        </span>
+                      </div>
+                      <p className="text-gray-300 leading-relaxed">
+                        {comment.text}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </CardContent>
         </Card>
